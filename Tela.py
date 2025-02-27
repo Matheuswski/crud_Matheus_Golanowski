@@ -52,7 +52,7 @@ class CRUDApp:
         email = self.email_entry.get()
         usuario = self.usuario_entry.get()
         senha = self.senha_entry.get()
-        user_id = self.user_id_entry.get()
+        
 
         if nome and telefone and email and usuario and senha:
             create_user(nome,telefone,email,usuario,senha)
@@ -81,7 +81,7 @@ class CRUDApp:
         senha = self.senha_entry.get()
 
         if user_id and nome and telefone and email and usuario and senha:
-            update_user(user_id,nome,telefone,email,usuario,senha)
+            update_user(user_id,nome,telefone,email,usuario,senha,user_id)
             self.nome_entry.delete(0,tk.END)
             self.telefone_entry.delete(0,tk.END)
             self.email_entry.delete(0,tk.END)
