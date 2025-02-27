@@ -1,4 +1,4 @@
-create database MatheusGolanowski_db
+create database MatheusGolanowski_db(
 
 	indusuario int not null auto_increment,
     nome text,
@@ -6,4 +6,5 @@ create database MatheusGolanowski_db
     usuario text,
     senha text,
     primary key(idusuario)
+
 );    

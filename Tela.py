@@ -34,6 +34,7 @@ class CRUDApp:
         self.email_entry.grid(row=2, column=1)
         self.usuario_entry.grid(row=3, column=1)
         self.senha_entry.grid(row=4, column=1)
+
         self.user_id_entry.grid(row=5, column=1)
 
         #Botoes do crud
@@ -41,6 +42,9 @@ class CRUDApp:
         tk.Button(self.root,text="Listar Usuario", command=self.create_user).grid(row=6, column=1, columnspan=1)
         tk.Button(self.root,text="Alterar Usuario", command=self.create_user).grid(row=7, column=0, columnspan=1)
         tk.Button(self.root,text="Excluir Usuario", command=self.create_user).grid(row=7, column=1, columnspan=1)
+
+        self.text_area = tk.Text(self.root, height=10, width=80)
+        self.text_area.grid(row=10, column=0, columnspan=4)
 
     def create_user(self):
         nome = self.nome_entry.get()
@@ -57,7 +61,7 @@ class CRUDApp:
             self.email_entry.delete(0,tk.END)
             self.usuario_entry.delete(0,tk.END)
             self.senha_entry.delete(0,tk.END)
-            messagebox.showerror("susseso","usuario criado com sussesso")
+            messagebox.showinfo("susseso","usuario criado com sussesso")
 
         else:
             messagebox.showerror("erro","todos os campos sao obrigatorios")
@@ -83,7 +87,7 @@ class CRUDApp:
             self.email_entry.delete(0,tk.END)
             self.usuario_entry.delete(0,tk.END)
             self.senha_entry.delete(0,tk.END)
-            messagebox.showerror("susseso","usuario alterado com sussesso")
+            messagebox.showinfo("susseso","usuario alterado com sussesso")
 
         else:
             messagebox.showerror("erro","todos os campos sao obrigatorios")
@@ -93,7 +97,7 @@ class CRUDApp:
         if user_id:
             delete_user(user_id)
             self.user_id_entry.delete(0,tk.END)
-            messagebox.showerror("Sussesso","ID do usuario excluido com sucesso!")
+            messagebox.showinfo("Sussesso","ID do usuario excluido com sucesso!")
         else:
             messagebox.showerror("Erro","ID do usuario é obrigatorio") 
 

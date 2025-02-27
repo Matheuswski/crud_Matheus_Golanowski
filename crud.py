@@ -26,6 +26,7 @@ def read_users():
     result = cursor.fetchall()
     cursor.close()
     conn.close()
+    return result
 
 def update_user(user_id, nome , telefone, email, usuario, senha):
     conn = get_connection()
@@ -40,7 +41,7 @@ def delete_user(user_id):
     conn = get_connection()
     cursor = conn.cursor()
     query = "DELETE FROM usuario WHERE idusuario =%s"
-    cursor.execute(query,(user_id))
+    cursor.execute(query,(user_id,))
     conn.commit()
     cursor.close()
     conn.close()    
